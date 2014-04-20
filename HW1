@@ -1,0 +1,41 @@
+def sum(arr)
+	arr.empty? ? 0 : arr.reduce(:+)
+end
+def max_2_sum(arr)
+	arr.empty? ? 0 : arr.length==1 ? arr[0] : arr.sort.last(2).reduce(:+)
+end
+def sum_to_n?(arr,n)
+	(arr.empty? && n.zero?) || arr.permutation(2).any{|a,b| (a+b).eql?(n)}
+end
+# p sum([1,2,3])
+# p max_2_sum([2,3,4])
+# p sum_to_n?([],0)
+
+def hello(name)
+	"Hello,"+name.to_s
+end
+def starts_with_consonant?(str)
+	#!str.empty? && (str.is_a? String) &&  (/\A[^aeiou]/i=~str) != nil
+end
+ # p starts_with_consonant? ""
+ # p starts_with_consonant? "Microsoft"
+ # p starts_with_consonant? "Apple"
+ def binary_multiple_of_4?(str)
+ 	str=~/^[01]+$/ ? str.to_i(2) %4==0 : false
+ end
+# p binary_multiple_of_4? "100"
+# p binary_multiple_of_4? ""
+
+class BookInStock
+	
+	def initialize(isbn,price)
+		raise ArgumentError if (isbn.empty? || price<0)
+		@isbn=isbn
+		@price=price
+	end
+	def self.price_as_string(price)
+		"$%.2f"%price
+	end
+end
+p BookInStock.new("98098",3.45)
+p BookInStock.new("",3.45)

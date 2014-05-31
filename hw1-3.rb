@@ -9,5 +9,5 @@ class BookInStock
 		"$%.2f"%price
 	end
 end
-p BookInStock.new("98098",3.45)
-p BookInStock.new("",3.45)
+#p BookInStock.new("98098",3.45)
+#p BookInStock.new("",3.45)
